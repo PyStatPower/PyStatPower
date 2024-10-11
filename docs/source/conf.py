@@ -3,14 +3,15 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+from pystatpower import __version__
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "PyStatPower"
 copyright = "2024, Snoopy1866"
 author = "Snoopy1866"
-version = "0.0"
-release = "0.0.3b1"
+version = release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -37,4 +38,5 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_download_button": True,
 }
-html_static_path = []
+html_static_path = ["_static"]
+html_search_option = {"dict": "_static/dict.txt"}
