@@ -1,5 +1,5 @@
 .. PyStatPower documentation master file, created by
-   sphinx-quickstart on Thu Oct 10 16:08:53 2024.
+   sphinx-quickstart on Fri Oct 11 15:02:54 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -10,13 +10,6 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
-测试
-
-文档
-
-搜索
-
-安装
 
 .. toctree::
    :maxdepth: 2

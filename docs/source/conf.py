@@ -3,13 +3,15 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import jieba
+
 from pystatpower import __version__
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "PyStatPower"
-copyright = "2024, Snoopy1866"
+copyright = "%Y, Snoopy1866"
 author = "Snoopy1866"
 version = release = __version__
 
@@ -39,4 +41,6 @@ html_theme_options = {
     "use_download_button": True,
 }
 html_static_path = ["_static"]
-html_search_option = {"dict": "_static/dict.txt"}
+
+# -- Jieba dictionary ---------------------------------------------------------
+html_search_options = {"dict": jieba.get_dict_file().name}
