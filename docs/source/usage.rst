@@ -14,7 +14,7 @@ To use PyStatPower, first install it using pip:
     
 To check is the PyStatPower is installed correctly, you can run the following code:
 
-.. code-block:: python
+.. code-block:: bash
     
     python -m pystatpower
     
