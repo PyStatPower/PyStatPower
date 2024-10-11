@@ -18,12 +18,12 @@ version = release = __version__
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ["sphinx.ext.duration"]
 
 templates_path = ["_templates"]
 exclude_patterns = []
 
-language = "zh_CN"
+language = "en"
 
 nitpicky = True
 
@@ -41,6 +41,4 @@ html_theme_options = {
     "use_download_button": True,
 }
 html_static_path = ["_static"]
-
-# -- Jieba dictionary ---------------------------------------------------------
-html_search_options = {"dict": jieba.get_dict_file().name}
+html_search_options = {"dict": jieba.get_dict_file().name}  # jieba default dict
