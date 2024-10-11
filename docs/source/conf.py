@@ -40,5 +40,5 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_download_button": True,
 }
-html_static_path = ["_static"]
+html_static_path = []
 html_search_options = {"dict": jieba.get_dict_file().name}  # jieba default dict
