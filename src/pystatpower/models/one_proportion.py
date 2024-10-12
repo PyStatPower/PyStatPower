@@ -10,15 +10,6 @@ from pystatpower.numeric import Alpha, DropOutRate, DropOutSize, Interval, Power
 from pystatpower.option import Alternative, Option, SearchDirection
 
 
-__all__ = [
-    "solve_for_sample_size",
-    "solve_for_alpha",
-    "solve_for_power",
-    "solve_for_nullproportion",
-    "solve_for_proportion",
-]
-
-
 @unique
 class TestType(Enum, metaclass=Option):
     """检验类型枚举类。
@@ -345,8 +336,8 @@ def solve_for_sample_size(
         proportion (float): 备择假设下的率
         alternative (str): 备择假设类型，可选值: "TWO_SIDED", "ONE_SIDED"
         test_type (str): 检验类型，可选值: "EXACT_TEST", "Z_TEST_USING_S_P0", "Z_TEST_USING_S_P0_CC", "Z_TEST_USING_S_PHAT", "Z_TEST_USING_S_PHAT_CC"
-        dropout_rate (float, optional): 脱落率。默认值: 0
-        full_output (bool, optional): 是否输出完整结果。默认值: False
+        dropout_rate (float): 脱落率。默认值: 0
+        full_output (bool): 是否输出完整结果。默认值: False
     """
 
     model = OneProportion.ForSize(

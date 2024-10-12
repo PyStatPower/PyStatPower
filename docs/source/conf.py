@@ -3,8 +3,6 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import jieba
-
 from pystatpower import __version__
 
 # -- Project information -----------------------------------------------------
@@ -18,7 +16,7 @@ version = release = __version__
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.duration"]
+extensions = ["sphinx.ext.duration", "sphinx.ext.doctest", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
 
 templates_path = ["_templates"]
 exclude_patterns = []
@@ -26,6 +24,7 @@ exclude_patterns = []
 language = "en"
 
 nitpicky = True
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -41,4 +40,3 @@ html_theme_options = {
     "use_download_button": True,
 }
 html_static_path = []
-html_search_options = {"dict": jieba.get_dict_file().name}  # jieba default dict
