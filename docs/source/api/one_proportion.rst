@@ -1,7 +1,4 @@
 one_proportion
 ==============
 
-.. autoclass:: pystatpower.models.one_proportion::OneProportion
-    :members:
-    :undoc-members:
-
+.. autofunction:: pystatpower.models.one_proportion.solve_for_sample_size
