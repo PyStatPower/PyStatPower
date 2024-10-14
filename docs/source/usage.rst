@@ -6,7 +6,11 @@ Usage
 Installation
 ------------
 
-To use PyStatPower, first install it using pip:
+To use PyStatPower, first install the Python_ interpreter, version 3.10+ is supported.
+
+.. _Python: https://www.python.org/downloads/
+
+Then, you can install PyStatPower using pip:
 
 .. code-block:: bash
     
@@ -18,7 +22,7 @@ To check is the PyStatPower is installed correctly, you can run the following co
     
     python -m pystatpower
     
-If you see the similar output as below, the PyStatPower is installed correctly:
+If you see the output similarily as below, the PyStatPower is installed correctly:
 
 .. code-block:: bash
 
@@ -27,10 +31,10 @@ If you see the similar output as below, the PyStatPower is installed correctly:
 Examples
 --------
 
-PyStatPower provide some modules for power analysis under different scenarios. Here are some examples:
+PyStatPower provide many modules for power analysis under different scenarios. Here are some examples:
 
 Solve for sample size under one proportion test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````````````````````````
 
 .. code-block:: python
     
@@ -53,7 +57,7 @@ Output:
     42.0
     
 Solve for sample size under two independent proportion test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```````````````````````````````````````````````````````````
 
 .. code-block:: python
 
@@ -76,7 +80,7 @@ Output:
     (76.0, 76.0)
     
 Solve for power under two independent proportion test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````````````````````````
 
 .. code-block:: python
 
