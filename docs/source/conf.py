@@ -18,6 +18,12 @@ version = release = __version__
 
 extensions = ["sphinx.ext.duration", "sphinx.ext.doctest", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
 
+# -- Options for autodoc -----------------------------------------------------
+autodoc_default_options = {
+    "member-order": "bysource",
+    "undoc-members": True,
+}
+
 templates_path = ["_templates"]
 exclude_patterns = []
 
