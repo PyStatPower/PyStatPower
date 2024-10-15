@@ -14,14 +14,14 @@ class Interval:
 
     Parameters
     ----------
-        lower : float
-            The lower bound of the interval.
-        upper : float
-            The upper bound of the interval.
-        lower_inclusive : bool, default=False
-            Wether the interval includes the lower bound.
-        upper_inclusive : bool, default=False
-            Whether the interval includes the upper bound.
+    lower : float
+        The lower bound of the interval.
+    upper : float
+        The upper bound of the interval.
+    lower_inclusive : bool
+        True to include the lower bound. False otherwise. Defaults to False.
+    upper_inclusive : bool
+        True to include the upper bound. False otherwise. Defaults to False.
 
     Examples
     --------
@@ -87,7 +87,7 @@ class Interval:
         Parameters
         ----------
         eps : float
-            The epsilon used to calculate the pseudo bound.
+            The epsilon used to calculate the pseudo bound. Defaults to `MIN_FLOAT`.
 
         Returns
         -------
@@ -106,7 +106,7 @@ class Interval:
         Parameters
         ----------
         eps : float
-            The epsilon used to calculate the pseudo bound.
+            The epsilon used to calculate the pseudo bound. Defaults to `MIN_FLOAT`.
 
         Returns
         -------
@@ -125,7 +125,7 @@ class Interval:
         Parameters
         ----------
         eps : float
-            The epsilon used to calculate the pseudo bound.
+            The epsilon used to calculate the pseudo bound. Defaults to `MIN_FLOAT`.
 
         Returns
         -------
