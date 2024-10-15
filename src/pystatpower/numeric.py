@@ -1,7 +1,10 @@
 from dataclasses import dataclass
 from math import isclose
 
+#: The minimum meaningful float number.
 MIN_FLOAT: float = 1e-10
+
+#: The maximum meaningful float number.
 MAX_FLOAT: float = 1e10
 
 
@@ -117,7 +120,7 @@ class Interval:
             return self.upper - eps
 
     def pseudo_bound(self, eps: float = MIN_FLOAT) -> tuple[float, float]:
-        """Return the pseudo interval for numerical calculation.
+        """Return the pseudo two-bounds tuple for numerical calculation.
 
         Parameters
         ----------
@@ -134,8 +137,24 @@ class Interval:
 
 
 class PowerAnalysisFloat(float):
-    """自定义功效分析数值类型"""
+    """Base class for all numeric types in power analysis.
 
+    - if an `int` or `float` numeric is passed to create an instance, it will be checked if it is in the domain.
+      if not, a `ValueError` will be raised, else a new float object is returned, whose behaviour is the same as the built-in float object.
+    - if `None` is passed to create an instance, `None` will be returned.
+    - if any other type is passed to create an instance, a `TypeError` will be raised.
+
+    Examples
+    --------
+    >>> PowerAnalysisFloat(0.5)
+    0.5
+    >>> PowerAnalysisFloat(0.5) * PowerAnalysisFloat(0.5)
+    0.25
+    >>> isinstance(PowerAnalysisFloat(0.5), float)
+    True
+    """
+
+    #: The domain of the numeric type.
     domain = Interval(-MAX_FLOAT, MAX_FLOAT, lower_inclusive=True, upper_inclusive=True)
 
     def __new__(cls, obj):
@@ -150,66 +169,66 @@ class PowerAnalysisFloat(float):
 
     @classmethod
     def pseudo_bound(cls) -> tuple[float, float]:
-        """伪区间，用于数值计算。"""
+        """Return the pseudo two-bounds tuple for numerical calculation."""
 
         return cls.domain.pseudo_bound()
 
 
 class Alpha(PowerAnalysisFloat):
-    """显著性水平"""
+    """Significance level"""
 
     domain = Interval(0, 1)
 
 
 class Power(PowerAnalysisFloat):
-    """检验效能"""
+    """Power"""
 
     domain = Interval(0, 1)
 
 
 class Mean(PowerAnalysisFloat):
-    """均值"""
+    """Mean"""
 
     domain = Interval(-MAX_FLOAT, MAX_FLOAT)
 
 
 class STD(PowerAnalysisFloat):
-    """标准差"""
+    """Standard deviation"""
 
     domain = Interval(0, MAX_FLOAT)
 
 
 class Proportion(PowerAnalysisFloat):
-    """率"""
+    """Proportion"""
 
     domain = Interval(0, 1)
 
 
 class Percent(PowerAnalysisFloat):
-    """百分比"""
+    """Percent"""
 
     domain = Interval(0, 1)
 
 
 class Ratio(PowerAnalysisFloat):
-    """比例"""
+    """Ratio"""
 
     domain = Interval(0, MAX_FLOAT)
 
 
 class Size(PowerAnalysisFloat):
-    """样本量"""
+    """Sample size"""
 
     domain = Interval(0, MAX_FLOAT)
 
 
 class DropOutRate(PowerAnalysisFloat):
-    """脱落率"""
+    """Dropout rate"""
 
     domain = Interval(0, 1, lower_inclusive=True)
 
 
 class DropOutSize(PowerAnalysisFloat):
-    """脱落样本量"""
+    """Dropout-inflated enrollment sample size"""
 
     domain = Interval(0, MAX_FLOAT, lower_inclusive=True)
