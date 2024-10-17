@@ -1,0 +1,66 @@
+# Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+from pystatpower import __version__
+
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+project = "PyStatPower"
+copyright = "%Y, Snoopy1866"
+author = "Snoopy1866"
+version = release = __version__
+
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+extensions = [
+    "sphinx.ext.duration",
+    "sphinx.ext.doctest",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx_autodoc_typehints",
+]
+
+maximum_signature_line_length = 79
+
+templates_path = ["_templates"]
+exclude_patterns = []
+
+language = "en"
+
+nitpicky = True
+
+
+# -- Options for sphinx.ext.autodoc ------------------------------------------
+autodoc_default_options = {
+    "member-order": "bysource",
+    "undoc-members": True,
+}
+
+# -- Options for sphinx.ext.napoleon -----------------------------------------
+napoleon_use_admonition_for_examples = True
+napoleon_use_admonition_for_notes = True
+napoleon_use_admonition_for_references = True
+napoleon_use_rtype = False
+napoleon_preprocess_types = True
+
+# -- Options for sphinx_autodoc_typehints ------------------------------------
+typehints_document_rtype = False
+
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+html_theme = "sphinx_book_theme"
+html_theme_options = {
+    "repository_url": "https://github.com/PyStatPower/PyStatPower",
+    "repository_branch": "main",
+    "path_to_docs": "docs",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+    "use_download_button": True,
+}
+html_static_path = []
