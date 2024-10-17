@@ -154,7 +154,8 @@ class PowerAnalysisFloat(float):
     True
     """
 
-    #: The domain of the numeric type.
+    #: An :class:`Interval` object that limits the range of values for a specific numerical type.
+    #: Tryting to create an instance with a value outside the domain will raise a ValueError.
     domain = Interval(-MAX_FLOAT, MAX_FLOAT, lower_inclusive=True, upper_inclusive=True)
 
     def __new__(cls, obj):
@@ -177,58 +178,68 @@ class PowerAnalysisFloat(float):
 class Alpha(PowerAnalysisFloat):
     """Significance level"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, 1)
 
 
 class Power(PowerAnalysisFloat):
     """Power"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, 1)
 
 
 class Mean(PowerAnalysisFloat):
     """Mean"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(-MAX_FLOAT, MAX_FLOAT)
 
 
 class STD(PowerAnalysisFloat):
     """Standard deviation"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, MAX_FLOAT)
 
 
 class Proportion(PowerAnalysisFloat):
     """Proportion"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, 1)
 
 
 class Percent(PowerAnalysisFloat):
     """Percent"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, 1)
 
 
 class Ratio(PowerAnalysisFloat):
     """Ratio"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, MAX_FLOAT)
 
 
 class Size(PowerAnalysisFloat):
     """Sample size"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, MAX_FLOAT)
 
 
 class DropOutRate(PowerAnalysisFloat):
     """Dropout rate"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, 1, lower_inclusive=True)
 
 
 class DropOutSize(PowerAnalysisFloat):
     """Dropout-inflated enrollment sample size"""
 
+    #: See :attr:`PowerAnalysisFloat.domain`.
     domain = Interval(0, MAX_FLOAT, lower_inclusive=True)

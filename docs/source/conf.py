@@ -16,7 +16,13 @@ version = release = __version__
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.duration", "sphinx.ext.doctest", "sphinx.ext.autodoc", "sphinx.ext.napoleon"]
+extensions = [
+    "sphinx.ext.duration",
+    "sphinx.ext.doctest",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx_autodoc_typehints",
+]
 
 maximum_signature_line_length = 79
 
@@ -28,18 +34,21 @@ language = "en"
 nitpicky = True
 
 
-# -- Options for autodoc -----------------------------------------------------
+# -- Options for sphinx.ext.autodoc ------------------------------------------
 autodoc_default_options = {
     "member-order": "bysource",
     "undoc-members": True,
 }
 
-# -- Options for napoleon ----------------------------------------------------
+# -- Options for sphinx.ext.napoleon -----------------------------------------
 napoleon_use_admonition_for_examples = True
 napoleon_use_admonition_for_notes = True
 napoleon_use_admonition_for_references = True
 napoleon_use_rtype = False
 napoleon_preprocess_types = True
+
+# -- Options for sphinx_autodoc_typehints ------------------------------------
+typehints_document_rtype = False
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
