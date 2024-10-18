@@ -19,9 +19,12 @@ version = release = __version__
 extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.doctest",
-    "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx_autodoc_typehints",
+    "sphinx_copybutton",
+    "sphinx_issues",
+    "autodoc2",
+    "myst_parser",
 ]
 
 maximum_signature_line_length = 79
@@ -33,13 +36,6 @@ language = "en"
 
 nitpicky = True
 
-
-# -- Options for sphinx.ext.autodoc ------------------------------------------
-autodoc_default_options = {
-    "member-order": "bysource",
-    "undoc-members": True,
-}
-
 # -- Options for sphinx.ext.napoleon -----------------------------------------
 napoleon_use_admonition_for_examples = True
 napoleon_use_admonition_for_notes = True
@@ -49,6 +45,17 @@ napoleon_preprocess_types = True
 
 # -- Options for sphinx_autodoc_typehints ------------------------------------
 typehints_document_rtype = False
+
+# -- Options for sphinx_issues -----------------------------------------------
+issues_github_path = "PyStatPower/PyStatPower"
+
+# -- Options for myst_parser -------------------------------------------------
+myst_enable_extensions = []
+
+# -- Options for autodoc2 ----------------------------------------------------
+autodoc2_packages = ["../../src/pystatpower"]
+autodoc2_output_path = "apidocs"
+autodoc2_render_plugin = "myst"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

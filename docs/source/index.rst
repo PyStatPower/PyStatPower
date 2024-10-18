@@ -18,4 +18,4 @@ Check out the :doc:`usage` section for further information, including how to
    :maxdepth: 2
    
    usage
-   api/index
+   apidocs/index
